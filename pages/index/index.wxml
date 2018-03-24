@@ -1,6 +1,6 @@
 <!--input.wxml-->
 <view class="section">
-  <input type='number' focus='true' placeholder='请输入身份证号码' bindinput='selectData'/>
+  <input type='number' focus='true' placeholder='请输入身份证号码前6位' bindinput='selectData'/>
 </view>
 
 <view class='content'>

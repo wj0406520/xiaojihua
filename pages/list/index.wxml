@@ -1,0 +1,59 @@
+<!--input.wxml-->
+<view class="section">
+  <input type='text' placeholder='地名' confirm-type='search'
+  	bindconfirm='searchData'
+  />
+</view>
+
+
+<view class='content'>
+    <view class='for-item' wx:for="{{list}}" wx:key="key">
+      <view>
+      	<span class='wmax'>{{item.name}}</span>
+      </view>
+      <view>
+	      <span class='wmin'>{{item.level}}A景区</span>
+	      <span class='wmin'>距离{{item.distance}}km</span>
+	      <span class='wmid'>{{item.province}}</span>
+      </view>
+    </view>
+</view>
+
+<view class='content'>
+    <view class='for-item' wx:for="{{min}}" wx:key="key">
+      <view>
+      	<span class='wmax'>{{item.name}}</span>
+      </view>
+      <view>
+	      <span class='wmin'>{{item.level}}A景区</span>
+	      <span class='wmin'>距离{{item.distance}}km</span>
+	      <span class='wmid'>{{item.province}}</span>
+      </view>
+    </view>
+</view>
+
+
+<view class='content'>
+    <view class='for-item' wx:for="{{mid}}" wx:key="key">
+      <view>
+      	<span class='wmax'>{{item.name}}</span>
+      </view>
+      <view>
+	      <span class='wmin'>{{item.level}}A景区</span>
+	      <span class='wmin'>距离{{item.distance}}km</span>
+	      <span class='wmid'>{{item.province}}</span>
+      </view>
+    </view>
+</view>
+<view class='content'>
+    <view class='for-item' wx:for="{{max}}" wx:key="key">
+      <view>
+      	<span class='wmax'>{{item.name}}</span>
+      </view>
+      <view>
+	      <span class='wmin'>{{item.level}}A景区</span>
+	      <span class='wmin'>距离{{item.distance}}km</span>
+	      <span class='wmid'>{{item.province}}</span>
+      </view>
+    </view>
+</view>
