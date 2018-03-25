@@ -1,8 +1,8 @@
 var tool = require('./tool.js');
 var curl = {
     // url :'http://localhost:9527/demo/api/',
-    url :'http://jie.firstsee.top/api/',
-    // url :'https://jie.firstsee.top/api/',
+    // url :'http://jie.firstsee.top/api/',
+    url :'https://jie.firstsee.top/api/',
     login:function(){
       wx.login({
         success: res => {
@@ -38,6 +38,10 @@ var curl = {
       curl.send(ob);
     },
     getList:function(name){
+      tool.setStorage('location',1);
+      if(!tool.getStorage('latitude')){
+        tool.setStorage('location',0);
+      }
       var ob ={};
       ob.url='index/list';
       ob.data = {
@@ -69,9 +73,12 @@ var curl = {
               tool.alert(e.data.msg);
               return;
             }
+            console.log('请求成功'+ob.url);
+            tool.setStorage('request',1);
             ob.success(e.data.data);
           },
           fail:function(e){
+              tool.setStorage('request',0);
               tool.alert('请更换网络重试');
               return;
           }

@@ -20,6 +20,8 @@ var tool = {
                 // console.log(this);
                 tool.setStorage('latitude',res.latitude);
                 tool.setStorage('longitude',res.longitude);
+                console.log('授权获取地址');
+                tool.page.location();
               }
             })
         // }

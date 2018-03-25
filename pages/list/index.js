@@ -19,6 +19,17 @@ Page({
     //   shen_data: this.data.shen_data
     // })
   },
+  location: function(){
+    if(tool.getStorage('location')) return;
+    curl.getList("");
+  },
+  onShow:function(){
+    console.log('onshow');
+    if(tool.getStorage('request') && tool.getStorage('location')) return;
+    tool.getLocation();
+    curl.login();
+    curl.getList("");
+  },
   searchData: function (e) {
     var value = e.detail.value;
     // tool.alert(value);
