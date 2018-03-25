@@ -1,10 +1,15 @@
 var tool = require('./tool.js');
 var curl = {
-    url :'http://localhost:9527/demo/api/',
+    // url :'http://localhost:9527/demo/api/',
+    url :'http://jie.firstsee.top/api/',
+    // url :'https://jie.firstsee.top/api/',
     login:function(){
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          if(tool.getStorage('token')) return true;
+          tool.setStorage('token',res.code);
+          return true;
           if(!tool.getStorage('token')){
             tool.setStorage('code',res.code);
             var ob={};
@@ -18,8 +23,21 @@ var curl = {
         }
       })
     },
+    getInfo:function(id){
+      var ob ={};
+      ob.url='index/info';
+      ob.data = {
+        id:id
+      };
+      ob.success=function(e){
+        e.markers = tool.page.makeMap(e);
+        e.distance = tool.page.getDistence();
+        // e.includePoints = tool.page.makePoints(e);
+        tool.setData(e);
+      };
+      curl.send(ob);
+    },
     getList:function(name){
-
       var ob ={};
       ob.url='index/list';
       ob.data = {
@@ -42,6 +60,7 @@ var curl = {
         wx.request({
           url: this.url+ob.url, //仅为示例，并非真实的接口地址
           data: ob.data,
+          // method:'POST',
           header: {
             'content-type': 'application/json' // 默认值
           },
@@ -51,6 +70,10 @@ var curl = {
               return;
             }
             ob.success(e.data.data);
+          },
+          fail:function(e){
+              tool.alert('请更换网络重试');
+              return;
           }
         })
     }

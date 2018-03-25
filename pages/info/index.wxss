@@ -1,0 +1,8 @@
+.m{
+	padding:20rpx;
+	margin-top:30rpx;
+}
+.name{
+	margin-top:30rpx;
+	padding:20rpx;
+}

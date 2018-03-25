@@ -7,7 +7,20 @@
 
 
 <view class='content'>
-    <view class='for-item' wx:for="{{list}}" wx:key="key">
+    <view class='for-item' bindtap='info' wx:for="{{list}}" wx:key="key" id="{{item.id}}" data-distance="{{item.distance}}">
+      <view>
+        <span class='wmax'>{{item.name}}</span>
+      </view>
+      <view>
+        <span class='wmin'>{{item.level}}A景区</span>
+        <span class='wmin'>距离{{item.distance}}km</span>
+        <span class='wmid'>{{item.province}}</span>
+      </view>
+    </view>
+</view>
+
+<view class='content'>
+    <view class='for-item' bindtap='info' wx:for="{{min}}" wx:key="key" id="{{item.id}}" data-distance="{{item.distance}}">
       <view>
       	<span class='wmax'>{{item.name}}</span>
       </view>
@@ -20,40 +33,26 @@
 </view>
 
 <view class='content'>
-    <view class='for-item' wx:for="{{min}}" wx:key="key">
+    <view class='for-item' bindtap='info' wx:for="{{mid}}" wx:key="key" id="{{item.id}}" data-distance="{{item.distance}}">
       <view>
-      	<span class='wmax'>{{item.name}}</span>
+        <span class='wmax'>{{item.name}}</span>
       </view>
       <view>
-	      <span class='wmin'>{{item.level}}A景区</span>
-	      <span class='wmin'>距离{{item.distance}}km</span>
-	      <span class='wmid'>{{item.province}}</span>
-      </view>
-    </view>
-</view>
-
-
-<view class='content'>
-    <view class='for-item' wx:for="{{mid}}" wx:key="key">
-      <view>
-      	<span class='wmax'>{{item.name}}</span>
-      </view>
-      <view>
-	      <span class='wmin'>{{item.level}}A景区</span>
-	      <span class='wmin'>距离{{item.distance}}km</span>
-	      <span class='wmid'>{{item.province}}</span>
+        <span class='wmin'>{{item.level}}A景区</span>
+        <span class='wmin'>距离{{item.distance}}km</span>
+        <span class='wmid'>{{item.province}}</span>
       </view>
     </view>
 </view>
 <view class='content'>
-    <view class='for-item' wx:for="{{max}}" wx:key="key">
+    <view class='for-item' bindtap='info' wx:for="{{max}}" wx:key="key" id="{{item.id}}" data-distance="{{item.distance}}">
       <view>
-      	<span class='wmax'>{{item.name}}</span>
+        <span class='wmax'>{{item.name}}</span>
       </view>
       <view>
-	      <span class='wmin'>{{item.level}}A景区</span>
-	      <span class='wmin'>距离{{item.distance}}km</span>
-	      <span class='wmid'>{{item.province}}</span>
+        <span class='wmin'>{{item.level}}A景区</span>
+        <span class='wmin'>距离{{item.distance}}km</span>
+        <span class='wmid'>{{item.province}}</span>
       </view>
     </view>
 </view>

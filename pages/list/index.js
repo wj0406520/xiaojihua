@@ -23,5 +23,11 @@ Page({
     var value = e.detail.value;
     // tool.alert(value);
     curl.getList(value);
+  },
+  info:function(e){
+    // e.currentTarget.id
+    tool.setStorage('distance',e.currentTarget.dataset.distance)
+    tool.setStorage('list_id',e.currentTarget.id);
+    tool.changePage('/info/index');
   }
 })

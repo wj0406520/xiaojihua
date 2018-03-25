@@ -5,19 +5,19 @@
 
 <view class='content'>
     <view class='title'>省：</view>
-    <view wx:for="{{shen_data}}">
+    <view wx:for="{{shen_data}}" wx:key="key">
       <span class="shen">{{item.n}}</span>
       <span class="shen">{{item.c}}</span>
       <!-- <span class="shi">{{item.c}}</span> -->
       <!-- <span class="qu">11111</span> -->
     </view>
     <view wx:if="{{shi_data}}" class='title'>市：</view>
-    <view wx:for="{{shi_data}}">
+    <view wx:for="{{shi_data}}" wx:key="key">
       <span class="shen">{{item.n}}</span>
       <span class="shen">{{item.c}}</span>
     </view>
     <view wx:if="{{qu_data}}" class='title'>区：</view>
-    <view wx:for="{{qu_data}}">
+    <view wx:for="{{qu_data}}" wx:key="key">
       <span class="shen">{{item.n}}</span>
       <span class="shen">{{item.c}}</span>
     </view>
