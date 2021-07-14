@@ -1,0 +1,14 @@
+<view class='header'>服务类型</view>
+<view class='ff_anniu' >
+<view class='ff_item' wx:for='{{categorys}}' wx:key='{{index}}'>
+<view class='ff_itemname {{activeIndex == index ? "sel" : ""}}' data-id='{{item.id}}' bindtap='binditem'>{{item.name}}</view>
+</view>
+</view>
+<view>
+    <button bindtap="default" >测试</button>
+</view>
+ <view class="my_text" style="animation-play-state:{{play_state}};">
+     
+ </view>
+<!-- <canvas style="width: 200px; height: 200px;" animation="{{animationData}}" canvas-id="firstCanvas"></canvas>
+<canvas style="width: 200px; height: 200px;" animation="{{animationData2}}" canvas-id="sencCanvas"></canvas> -->

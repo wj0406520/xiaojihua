@@ -1,0 +1,10 @@
+<!--pages/minfo/index.wxml-->
+
+<view class='content'>
+
+    <image mode="aspectFit" src="{{img}}"></image>
+
+    <view class='for-item' bindtap='info' wx:for="{{list}}" wx:key="key" id="{{item.id}}" data-src="{{item.int_url}}" data-index="{{index}}">
+           <span class='wmin {{listen==index?"listen":""}}'>{{item.name}}</span>
+    </view>
+</view>

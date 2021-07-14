@@ -1,8 +1,9 @@
 var tool = require('./tool.js');
 var curl = {
+    url_music:'https://classicmusic.nbweiaishiguang.com/api/',
+    url_old:'https://jie.nbweiaishiguang.com/api/',
     // url :'http://localhost:9527/demo/api/',
-    // url :'http://jie.firstsee.top/api/',
-    url :'https://jie.firstsee.top/api/',
+    url:'https://jie.nbweiaishiguang.com/api/',
     login:function(){
       wx.login({
         success: res => {
@@ -24,6 +25,7 @@ var curl = {
       })
     },
     getInfo:function(id){
+      this.url = this.url_old;
       var ob ={};
       ob.url='index/info';
       ob.data = {
@@ -38,6 +40,7 @@ var curl = {
       curl.send(ob);
     },
     getList:function(name){
+      this.url = this.url_old;
       tool.setStorage('location',1);
       if(!tool.getStorage('latitude')){
         tool.setStorage('location',0);
@@ -57,6 +60,35 @@ var curl = {
         // tool.page.data=e;
         tool.setData(e);
         // console.log(tool.page);
+      };
+      curl.send(ob);
+    },
+
+
+    mlist:function(){
+      var ob ={};
+      ob.url='index/list';
+      this.url = this.url_music;
+      ob.data = {};
+      ob.success=function(e){
+        // console.log(e);
+        // console.log(this);
+        // console.log(tool.page);
+        // tool.page.data=e;
+        tool.setData(e);
+        // console.log(tool.page);
+      };
+      curl.send(ob);
+    },
+    mInfo:function(id){
+      var ob ={};
+      this.url = this.url_music;
+      ob.url='index/info';
+      ob.data = {
+        id:id
+      };
+      ob.success=function(e){
+        tool.setData(e);
       };
       curl.send(ob);
     },

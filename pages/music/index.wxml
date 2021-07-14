@@ -1,0 +1,12 @@
+<!--pages/music/index.wxml-->
+
+<view class='content'>
+    <view class='for-item' bindtap='info' wx:for="{{list}}" wx:key="key" id="{{item.id}}" data-img="{{item.img}}">
+      <view>
+        <image mode="aspectFit" src="{{item.img}}"></image>
+        <view>
+           <span class='wmin'>{{item.tag}}</span>
+        </view>
+      </view>
+    </view>
+</view>

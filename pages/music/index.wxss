@@ -1,0 +1,19 @@
+/* pages/music/index.wxss */
+
+
+.content{
+  padding: 0rpx 0rpx;
+}
+
+.content view.for-item{
+	font-size:25rpx;
+	padding:20rpx 50rpx;
+	background:#fff;
+	border-bottom:1px solid #ddd;
+	margin:10rpx 10rpx;
+	border-radius:15rpx;
+}
+
+.content image{
+	width: 100%;
+}
